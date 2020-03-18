@@ -1,18 +1,31 @@
 #include <stdio.h>
+#include <stdbool.h>
 
 int main()
 {
-    int alloaction_A[3] = {0,3,2};
-    int allocation_B[3] = {0,2,1};
-    int allocation_C[3] = {1,0,1};
+    int work[3][3] = {{0,0,1},{3,2,0},{2,1,1}};//allocation
+    int maxNeed[3][3] = {{8,4,3},{6,2,0},{3,3,3}};
+    int available[3]={3,2,2};
+    int remaningNeed[3][3];
+    bool final[3] = {false,false,false};
+    printf(work[1][1]);
 
-    int maxNeed_A[3] = {8,4,3};
-    int maxNeed_B[3] = {6,2,0};
-    int maxNeed_C[3] = {3,3,3};
+// this is for remaning need
 
-    int available_A[3] = {0,3,2};
-    int available_B[3] = {0,2,1};
-    int available_C[3] = {1,0,1};
+    for(int i = 0;i<3;i++)
+    {
+        for(int j = 0;j<3;j++)
+        {
+            remaningNeed[i][j] = maxNeed[i][j] + work[i][j];
+        }
+    }
 
+for(int i=0;i<3;i++)
+{
+    if(final[i] == false)
+    {
+        maxNeed
+    }
+}
 
 }

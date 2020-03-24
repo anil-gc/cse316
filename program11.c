@@ -7,6 +7,7 @@ int main()
     int maxNeed[3][3] = {{8,4,3},{6,2,0},{3,3,3}};
     int available[3]={3,2,2}; //work
     int remaningNeed[3][3];
+    int request[3][2];
     int check =1;
     bool final[3] = {false,false,false};
 
@@ -21,9 +22,23 @@ int main()
     }
 // remaning need end
     
-    while (check) {
-        
+//for request
+    for (int i=0;i<3; i++) {
+        for (j=0; j<3; j++) {
+            scanf("%d",&request[i][j]);
+        }
     }
 
+//end request
+    
+// resource request algorithms
+    
+    for (int i=0; i<2; i++) {
+        for (int j=0; j<3; j++) {
+            if (<#condition#>) {
+                <#statements#>
+            }
+        }
+    }
 
 }

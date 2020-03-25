@@ -9,7 +9,8 @@ int main()
     int available[3]={3,2,2}; //work
     int remaningNeed[3][3];
     int request[3][2];
-    bool final[3] = {false,false,false};
+    bool temp = true;
+    int counter=0;
 
 // this is for remaning need
 
@@ -55,8 +56,38 @@ int main()
         }
     }
 
+
+
+// end of resource request algorithms
+
+
+    // safety algorithms
+while(temp != false)
+{
+       for (int i=0; i<2; i++)
+       {
+           for (int j=0; j<3; j++)
+           {
+               if(counter == 3)
+               {
+                   temp = true;
+               }
+               
+               if (remaningNeed[i][j]<=available[j])
+               {
+                   available[j] += allocation[i][j];
+                   counter +=1;
+               }
+               else
+               {
+                   continue;
+               }
+           }
+       }
+
 }
+    
+    
 
-// safety algorithms
 
-
+}

@@ -11,6 +11,7 @@ int main()
     int request[3][2];
     bool temp = true;
     int counter=0;
+    int counter2=0;
 
 // this is for remaning need
 
@@ -52,6 +53,7 @@ int main()
             else
             {
                 printf("error occurs system cant allocate the resources");
+                break;
             }
         }
     }
@@ -61,18 +63,18 @@ int main()
 // end of resource request algorithms
 
 
-    // safety algorithms
+    // safety algorithms (bankers algorithms)
 while(temp != false)
 {
        for (int i=0; i<2; i++)
        {
            for (int j=0; j<3; j++)
            {
-               if(counter == 3)
+               if(counter == 3 || counter2 ==3)
                {
-                   temp = true;
+                   temp = false;
+                   break;
                }
-               
                if (remaningNeed[i][j]<=available[j])
                {
                    available[j] += allocation[i][j];
@@ -80,14 +82,17 @@ while(temp != false)
                }
                else
                {
+                   counter2 +=1;
                    continue;
                }
            }
        }
-
 }
-    
-    
-
-
+if(counter==3)
+{
+    printf("system is in safe state \n");
+}
+else{
+    printf("system is stuck in deadlock or unsafe state");
+}
 }
